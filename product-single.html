@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Plantify | Products</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,500,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="shortcut icon" href="images/icon.jpg" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/icon.jpg">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+		 <script src="js/angular.js"></script>
+    <script src="js/app.js"></script>
+
+  </head>
+  <body class="goto-here" ng-app = "myModule" ng-controller = "myController">
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	     <a class="navbar-brand"  href="index.html"><img src="images/icon.jpg" style="width: 100px; height: 100px;"></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="#plants" class="nav-link">Shop</a></li>
+	        	<li class="nav-item"><a href="#cart" class="nav-link">Cart<span>[{{carts.length}}]</span></a></li>
+	          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+	          
+
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+    <div class="hero-wrap hero-bread" style="background-image: url('images/slide3.jpg');">
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span></p>
+            <h1 class="mb-0 bread">Products</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="plants" class="ftco-section">
+    	<div class="container">
+ 
+    		<div class="row">
+    			<div class="col-lg-5 mb-5 ftco-animate">
+    				<div ng-repeat = "product in products | filter : 'aluminum'">
+    				<a href="images/plant1.jpg" class="image-popup"><img ng-src="{{product.p_image}}" class="img-fluid" style="width: 500px;height: 500px;" alt="Aluminum Plant"></a>
+    			</div>
+    		</div>
+    			<div class="col-lg-5 product-details pl-md-5 ftco-animate">
+    				<div ng-repeat = "product in products | filter : 'aluminum'">
+    				<h3>{{product.p_name}}</h3>
+    				<p class="price"><span>₱{{product.p_price}}</span></p>
+    				<p><b>Family: </b>Urticaceae <br><b>Description: </b>The foliage looks like it has been splashed with aluminum paint, hence the common name. This is an upright, herbaceous perennial that is noted for its textured green and silver foliage.<br> <b>Sun: </b>Part Shade <br> <b>Water: </b>Medium <br> <b>Maintenance: </b>Low
+						</p>
+						<div class="row mt-4">
+								<div class="w-100"></div>
+							<div class="input-group col-md-6 d-flex mb-3" >
+	      
+	             	<input type="number" class="form-control input-number" ng-model="product.p_quanti">
+	          	</div>
+	          	<div class="w-100"></div>
+          	</div>
+          	<p><a type="button" ng-click =" add_cart(product)" href="#cart" class="btn btn-black py-3 px-5">Add to Cart</a></p>
+    			</div>
+    		</div>
+
+
+    			<div class="col-lg-5 mb-5 ftco-animate">
+    				<div ng-repeat = "product in products | filter : 'swiss'">
+    				<a href="images/plant2.jpg" class="image-popup"><img ng-src="{{product.p_image}}" class="img-fluid" style="width: 500px;height: 500px;" alt="Swiss Cheese Plant"></a>
+    			</div>
+    		</div>
+
+    		<div class="col-lg-5 product-details pl-md-5 ftco-animate">
+    				<div ng-repeat = "product in products | filter : 'swiss'">
+    				<h3>{{product.p_name}}</h3>
+    				<p class="price"><span>₱{{product.p_price}}</span></p>
+    				    				<p><b>Family: </b>Araceae <br><b>Description: </b>Its gorgeous leaves, which develop holes that give it its whimsical name, may grow up to three feet wide! It's a great plant for newbies and experienced plant people alike.<br> <b>Sun: </b>Indirect Sunlight <br> <b>Water: </b>Medium <br> <b>Maintenance: </b>Medium
+						</p>
+						<div class="row mt-4">
+								<div class="w-100"></div>
+							<div class="input-group col-md-6 d-flex mb-3" >
+	      
+	             	<input type="number" class="form-control input-number" ng-model="product.p_quanti">
+	          	</div>
+	          	<div class="w-100"></div>
+          	</div>
+          	<p><a type="button" ng-click =" add_cart(product)" href="#cart" class="btn btn-black py-3 px-5">Add to Cart</a></p>	
+          	</div>
+          	
+    			</div>
+    	
+
+
+    		
+    			<div class="col-lg-5 mb-5 ftco-animate">
+    				<div ng-repeat = "product in products | filter : 'snake'">
+    				<a href="images/plant3.jpg" class="image-popup"><img ng-src="{{product.p_image}}" class="img-fluid" style="width: 500px;height: 500px;" alt="Snake Plant"></a>
+    			</div>
+    		</div>
+    			<div class="col-lg-5 product-details pl-md-5 ftco-animate">
+    				<div ng-repeat = "product in products | filter : 'snake'">
+    				<h3>{{product.p_name}}</h3>
+    				<p class="price"><span>₱{{product.p_price}}</span></p>
+    				    				<p><b>Family: </b>Asparagaceae <br><b>Description: </b>Erect, fleshy, sharply-pointed, sword-shaped leaves are deep green with light gray-green horizontal stripes. Leaves rise stiffly in a rosette from a thick rhizome. Small, fragrant, greenish-white flowers bloom on mature plants in spring, followed by orange berries. Flowers and fruit rarely appear on indoor plants.<br> <b>Sun: </b>Part Shade <br> <b>Water: </b>Medium <br> <b>Maintenance: </b>Low
+						</p>
+						<div class="row mt-4">
+								<div class="w-100"></div>
+							<div class="input-group col-md-6 d-flex mb-3" >
+	      
+	             	<input type="number" class="form-control input-number" ng-model="product.p_quanti">
+	          	</div>
+	          	<div class="w-100"></div>
+          	</div>
+          	<p><a type="button" ng-click =" add_cart(product)" href="#cart" class="btn btn-black py-3 px-5">Add to Cart</a></p>
+    			</div>
+    		</div>
+			
+
+	<div class="col-lg-5 mb-5 ftco-animate">
+    				<div ng-repeat = "product in products | filter : 'silver'">
+    				<a href="images/plant4.jpg" class="image-popup"><img ng-src="{{product.p_image}}" class="img-fluid" style="width: 500px;height: 500px;" alt="Silver Queen"></a>
+    			</div>
+    		</div>
+    			<div class="col-lg-5 product-details pl-md-5 ftco-animate">
+    				<div ng-repeat = "product in products | filter : 'silver'">
+    				<h3>{{product.p_name}}</h3>
+    				<p class="price"><span>₱{{product.p_price}}</span></p>
+    				    				<p><b>Family: </b>Araceae <br><b>Description: </b>It is primarily grown for its attractive variegated foliage and not for its insignificant flowers. Thick, elliptic to lance-shaped, dark green leaves (to 4-5” long and 2-3” wide) with attractive silver-gray variegation appear on short stems rising from the soil. <br> <b>Sun: </b>Part shade to full shade <br> <b>Water: </b>Medium <br> <b>Maintenance: </b>Low
+						</p>
+						<div class="row mt-4">
+								<div class="w-100"></div>
+							<div class="input-group col-md-6 d-flex mb-3" >
+	      
+	             	<input type="number" class="form-control input-number" ng-model="product.p_quanti">
+	          	</div>
+	          	<div class="w-100"></div>
+          	</div>
+          	<p><a type="button" ng-click =" add_cart(product)" href="#cart" class="btn btn-black py-3 px-5">Add to Cart</a></p>
+    			</div>
+    		</div>
+
+	<div class="col-lg-5 mb-5 ftco-animate">
+    				<div ng-repeat = "product in products | filter : 'albo'">
+    				<a href="images/plant6.jpg" class="image-popup"><img ng-src="{{product.p_image}}" class="img-fluid" style="width: 500px;height: 500px;" alt="Monstera Albo"></a>
+    			</div>
+    		</div>
+    			<div class="col-lg-5 product-details pl-md-5 ftco-animate">
+    				<div ng-repeat = "product in products | filter : 'albo'">
+    				<h3>{{product.p_name}}</h3>
+    				<p class="price"><span>₱{{product.p_price}}</span></p>
+    				    				<p><b>Family: </b>Araceae <br><b>Description: </b>an impressive, spreading, easy-to-grow, evergreen and generally low maintenance perennial plant. This cultivar produces attractive variegated leaves marbled with white colouring. This houseplant lives happily in full or partial shade. However, it will grow faster in bright light.<br> <b>Sun: </b>Indirect Sunlight <br> <b>Water: </b>Medium <br> <b>Maintenance: </b>Medium
+						</p>
+						<div class="row mt-4">
+								<div class="w-100"></div>
+							<div class="input-group col-md-6 d-flex mb-3" >
+	      
+	             	<input type="number" class="form-control input-number" ng-model="product.p_quanti">
+	          	</div>
+	          	<div class="w-100"></div>
+          	</div>
+							<p><a type="button" ng-click =" add_cart(product)" href="#cart" class="btn btn-black py-3 px-5">Add to Cart</a></p>
+    			</div>
+    		</div>
+
+	<div class="col-lg-5 mb-5 ftco-animate">
+    				<div ng-repeat = "product in products | filter : 'alocasia'">
+    				<a href="images/plant5.jpg" class="image-popup"><img ng-src="{{product.p_image}}" class="img-fluid" style="width: 500px;height: 500px;" alt="Buddha's Palm"></a>
+    			</div>
+    		</div>
+    			<div class="col-lg-5 product-details pl-md-5 ftco-animate">
+    				<div ng-repeat = "product in products | filter : 'alocasia'">
+    				<h3>{{product.p_name}}</h3>
+    				<p class="price"><span>₱{{product.p_price}}</span></p>
+    				    <p><b>Family: </b>Araceae <br><b>Description: </b>This aroid plant is a perennial herb producing thick, erect stems up to 5 centimeters wide that branch from the bases and grow up to a meter tall. It produces bunches of leaves on long, sheathed petioles which are generally up to about 30 centimeters long but are known to reach 80. The wide, roughly heart-shaped leaf blade is up to 40 by 28 centimeters and has 4 main veins running from the center to the edge on each side.<br> <b>Sun: </b>Filtered Sunlight <br> <b>Water: </b>Medium <br> <b>Maintenance: </b>Medium
+						</p>
+						<div class="row mt-4">
+								<div class="w-100"></div>
+							<div class="input-group col-md-6 d-flex mb-3" >
+	      
+	             	<input type="number" class="form-control input-number" ng-model="product.p_quanti">
+	          	</div>
+	          	<div class="w-100"></div>
+          	</div>
+							<p><a type="button" ng-click =" add_cart(product)" href="#cart" class="btn btn-black py-3 px-5">Add to Cart</a></p>
+    			</div>
+    		</div>
+
+	<div class="col-lg-5 mb-5 ftco-animate">
+    				<div ng-repeat = "product in products | filter : 'easter'">
+    				<a href="images/plant8.jpg" class="image-popup"><img ng-src="{{product.p_image}}" class="img-fluid" style="width: 500px;height: 500px;" alt="Easter Cactus"></a>
+    			</div>
+    		</div>
+    			<div class="col-lg-5 product-details pl-md-5 ftco-animate">
+    				<div ng-repeat = "product in products | filter : 'easter'">
+    				<h3>{{product.p_name}}</h3>
+    				<p class="price"><span>₱{{product.p_price}}</span></p>
+    				    				<p><b>Family: </b>Araceae <br><b>Description: </b>This aroid plant is a perennial herb producing thick, erect stems up to 5 centimeters wide that branch from the bases and grow up to a meter tall. It produces bunches of leaves on long, sheathed petioles which are generally up to about 30 centimeters long but are known to reach 80. The wide, roughly heart-shaped leaf blade is up to 40 by 28 centimeters and has 4 main veins running from the center to the edge on each side.<br> <b>Sun: </b>Filtered Sunlight <br> <b>Water: </b>Medium <br> <b>Maintenance: </b>Medium
+						</p>
+						<div class="row mt-4">
+								<div class="w-100"></div>
+							<div class="input-group col-md-6 d-flex mb-3" >
+	      
+	             	<input type="number" class="form-control input-number" ng-model="product.p_quanti">
+	          	</div>
+	          	<div class="w-100"></div>
+          	</div>
+							<p><a type="button" ng-click =" add_cart(product)" href="#cart" class="btn btn-black py-3 px-5">Add to Cart</a></p>
+    			</div>
+    		</div>
+
+	<div class="col-lg-5 mb-5 ftco-animate">
+    				<div ng-repeat = "product in products | filter : 'parlor'">
+    				<a href="images/plant9.jpg" class="image-popup"><img ng-src="{{product.p_image}}" class="img-fluid" style="width: 500px;height: 500px;" alt="Parlor Palm"></a>
+    			</div>
+    		</div>
+    			<div class="col-lg-5 product-details pl-md-5 ftco-animate">
+    				<div ng-repeat = "product in products | filter : 'parlor'">
+    				<h3>{{product.p_name}}</h3>
+    				<p class="price"><span>₱{{product.p_price}}</span></p>
+    				    			<p><b>Family: </b>Araceae <br><b>Description: </b>This rainforest native is a single-trunk palm with a compact habit and handsome arching green pinnate leaves comprised of narrow leaflets. It may bear clusters of yellow flowers in spring if it gets enough light. This palm typically grows to about 4 feet tall indoors but can reach 8 in ideal conditions.<br> <b>Sun: </b>Bright, filtered Sunlight <br> <b>Water: </b>Medium <br> <b>Maintenance: </b>Medium
+						</p>
+						<div class="row mt-4">
+								<div class="w-100"></div>
+							<div class="input-group col-md-6 d-flex mb-3" >
+	      
+	             	<input type="number" class="form-control input-number" ng-model="product.p_quanti">
+	          	</div>
+	          	<div class="w-100"></div>
+          	</div>
+							<p><a type="button" ng-click =" add_cart(product)" href="#cart" class="btn btn-black py-3 px-5">Add to Cart</a></p>
+    			</div>
+    		</div>
+
+	<div class="col-lg-5 mb-5 ftco-animate">
+    				<div ng-repeat = "product in products | filter : 'scarlet'">
+    				<a href="images/plant10.jpg" class="image-popup"><img ng-src="{{product.p_image}}" class="img-fluid" style="width: 500px;height: 500px;" alt="Scarlet Star"></a>
+    			</div>
+    		</div>
+    			<div class="col-lg-5 product-details pl-md-5 ftco-animate">
+    				<div ng-repeat = "product in products | filter : 'scarlet'">
+    				<h3>{{product.p_name}}</h3>
+    				<p class="price"><span>₱{{product.p_price}}</span></p>
+    				    				<p><b>Family: </b>Bromeliaceae <br><b>Description: </b>The flower head of this plant forms a wide, deep cup with multiple bracts coming out in layers. The coloration of these blooms begins as a deep green, which slowly fades into a yellow.<br> <b>Sun: </b>Bright, indirect Sunlight <br> <b>Water: </b>Medium <br> <b>Maintenance: </b>Medium
+						</p>
+						<div class="row mt-4">
+								<div class="w-100"></div>
+							<div class="input-group col-md-6 d-flex mb-3" >
+	      
+	             	<input type="number" class="form-control input-number" ng-model="product.p_quanti">
+	          	</div>
+	          	<div class="w-100"></div>
+          	</div>
+							<p><a type="button" ng-click =" add_cart(product)" href="#cart" class="btn btn-black py-3 px-5">Add to Cart</a></p>
+    			</div>
+    		</div>
+
+	<div class="col-lg-5 mb-5 ftco-animate">
+    				<div ng-repeat = "product in products | filter : 'Powder Puff'">
+    				<a href="images/plant7.jpg" class="image-popup"><img ng-src="{{product.p_image}}" class="img-fluid" style="width: 500px;height: 500px;" alt="Powder Puff Cactus"></a>
+    			</div>
+    		</div>
+    			<div class="col-lg-5 product-details pl-md-5 ftco-animate">
+    				<div ng-repeat = "product in products | filter : 'Powder Puff'">
+    				<h3>{{product.p_name}}</h3>
+    				<p class="price"><span>₱{{product.p_price}}</span></p>
+    				    				<p><b>Family: </b>Cactaceae <br><b>Description: </b>the powder puff cactus grows rapids, producing small, round offsets that cluster around the parent plant. The body of the cactus itself is stocky and usually a blue/green color, covered in white, silky hairs that encase the entire plant. It may look fluffy, but take care not to touch it—the spines are pretty sharp. It will produce small white or red flowers in summer, often in a circular or halo shape.<br> <b>Sun: </b>Full Sunlight <br> <b>Water: </b>Low <br> <b>Maintenance: </b>Low
+						</p>
+						<div class="row mt-4">
+								<div class="w-100"></div>
+							<div class="input-group col-md-6 d-flex mb-3" >
+	      
+	             	<input type="number" class="form-control input-number" ng-model="product.p_quanti">
+	          	</div>
+	          	<div class="w-100"></div>
+          	</div>
+							<p><a type="button" ng-click =" add_cart(product)" href="#cart" class="btn btn-black py-3 px-5">Add to Cart</a></p>
+    			</div>
+    		</div>
+
+    		</div>
+    	</div>
+
+
+    	</section>
+				<div id="cart" class = "pull-right col-md-12">
+		  <section class="ftco-section ftco-cart">
+		  	<h3 class="text-center"> MY CART</h3>
+			<div class="container">
+				<div class="row">
+    			<div class="col-md-12 ftco-animate">
+    				
+    				<div class="cart-list">
+	    				<table class="table">
+						    <thead class="thead-primary">
+						      <tr class="text-center">
+						        <th>Product</th>
+						        <th>Product name</th>
+						        <th>Price</th>
+						        <th>Quantity</th>
+						        <th>Sub-Total</th>
+						        <th>Remove</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						      <tr class="text-center" ng-repeat = "cart in carts" ng-init = "Total(cart)">
+						      
+						        <td class="image-prod"><img  style="width: 200px;height: 200px;" ng-src = "{{cart.p_image}}"><div class="img"> </div></td>
+						        
+						        <td class="product-name">
+						        	<h3>{{cart.p_name}}</h3>
+						        </td>
+						        
+						        <td class="price">₱{{cart.p_price}}</td>
+						        
+						        <td class="quantity">
+						        	<div class="input-group mb-3">
+					             	<input type="text" name="quantity" class="quantity form-control input-number" value="{{cart.p_quanti}}" min="1" max="100">
+
+					          	</div>
+					          </td>
+						        
+						        <td class="total">₱{{setsub(cart)}}</td>
+						          <td ><button class="btn-danger btn-xs" style="width: 20px;height: 10px" ng-click="remove_cart(cart);">X</button></td>
+						      </tr><!-- END TR-->
+						    </tbody>
+						  </table>
+					  </div>
+ 
+    		</div>
+    		</div>
+    		<div class="row justify-content-end">
+    		
+    			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
+    				<div class="cart-total mb-3">
+    					<h3>Total</h3> <h3><b><span>₱{{total}}</span></b></h3>
+    				</div>	
+    				</div>
+    			</div>
+    		</div>
+			</div>
+		</section>
+		</div>  
+
+    <footer class="ftco-footer ftco-section">
+      <div class="container">
+      	<div class="row">
+      		<div class="mouse">
+						<a href="#" class="mouse-icon">
+							<div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
+						</a>
+					</div>
+      	</div>
+          <div id ="contact" class="row">
+          <div class="col-md-12 text-center">
+          			<h2 class="ftco-heading-2">Contacts</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><span class="icon icon-map-marker"></span><span class="text">Brgy.12 Consuelo St. Nasugbu, Batangas</span></li>
+	                <li><a><span class="icon icon-phone"></span><span class="text">0961-150-8119</span></a></li>
+	                <li><a> <span class="icon icon-envelope"></span><span class="text">arnoldruiz1507@gmail.com</span></a></li>
+	              </ul>
+	               		<a href="index.html"><img src="images/icon.jpg" style="width: 200px; height: 200px;"></a>
+	                 <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						</p>
+
+	            </div>
+            </div>
+       </div>
+      </div>
+    </footer>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F95D00"/></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="js/google-map.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+		$(document).ready(function(){
+
+		var quantitiy=0;
+		   $('.quantity-right-plus').click(function(e){
+		        
+		        // Stop acting like a button
+		        e.preventDefault();
+		        // Get the field name
+		        var quantity = parseInt($('#quantity').val());
+		        
+		        // If is not undefined
+		            
+		            $('#quantity').val(quantity + 1);
+
+		          
+		            // Increment
+		        
+		    });
+
+		     $('.quantity-left-minus').click(function(e){
+		        // Stop acting like a button
+		        e.preventDefault();
+		        // Get the field name
+		        var quantity = parseInt($('#quantity').val());
+		        
+		        // If is not undefined
+		      
+		            // Increment
+		            if(quantity>0){
+		            $('#quantity').val(quantity - 1);
+		            }
+		    });
+		    
+		});
+	</script>
+    
+  </body>
+</html>
